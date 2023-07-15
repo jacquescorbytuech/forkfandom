@@ -45,17 +45,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
 
-  eleventyConfig.addCollection("writing", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_posts/writing/*.md");
-  });
-
-  eleventyConfig.addCollection("reading", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_posts/reading/*.md");
-  });
-  
-  eleventyConfig.addCollection("links", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_posts/links/*.md");
-  });
 
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (
