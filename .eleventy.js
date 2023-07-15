@@ -1,30 +1,88 @@
+const htmlmin = require('html-minifier')
+
+const { DateTime } = require("luxon");
+const now = String(Date.now())
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const markdownIt = require("markdown-it");
+const markdownItFootnote = require("markdown-it-footnote");
 
 
-module.exports = function(eleventyConfig) {
-
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addWatchTarget('styles/tailwind.config.js')
+  eleventyConfig.addWatchTarget('styles/tailwind.css')
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPassthroughCopy('src/img')
 
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addWatchTarget("src/images");
 
-  const {
-    DateTime
-  } = require("luxon");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
 
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-      return DateTime.fromJSDate(dateObj, {
-        zone: 'utc'
-      }).toFormat('yy-MM-dd');
-    });
+  let markdownLibrary = markdownIt(options).use(markdownItFootnote);
 
-    eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {
-      zone: 'utc'
-    }).toFormat("dd-MM-yy");
+  eleventyConfig.setLibrary("md", markdownLibrary);
+
+  eleventyConfig.addShortcode('version', function () {
+    return now
+  })
+
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('DDD');
   });
 
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  function filterTagList(tags) {
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+  }
+
+  eleventyConfig.addFilter("filterTagList", filterTagList)
+
+  eleventyConfig.addCollection("writing", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_posts/writing/*.md");
+  });
+
+  eleventyConfig.addCollection("reading", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_posts/reading/*.md");
+  });
+  
+  eleventyConfig.addCollection("links", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_posts/links/*.md");
+  });
+
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+    if (
+      process.env.ELEVENTY_PRODUCTION &&
+      outputPath &&
+      outputPath.endsWith('.html')
+    ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      })
+      return minified
+    }
+
+    return content
+  })
+
   return {
-    dir: { input: 'src', output: '_site' }
+    dir: {
+      input: "src",
+      output: "_site",
+    },
+    templateFormats: [ "md", "njk", "html", ],
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
   };
-};
+
+}

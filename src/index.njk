@@ -1,15 +1,46 @@
 ---
-title: Home
-layout: layouts/base.njk
+eleventyExcludeFromCollections: true
 ---
+{% extends "default.njk" %}
 
-<div class="space-y-8">
+{% block title %}Jacques Corby-Tuech{% endblock %}
 
-  <div>
-    <p>This is the project's home page. There is a little styling for demonstration purposes only.</p>
-    <p>The navigation might as well be a sidebar, or a floating menu. This template provides the structure, make it yours ✌️</p>
+{% block content %}
+  <div class="max-w-7xl mx-auto w-full">
+    <h1 class="text-5xl font-bold mt-12">Hi, I'm Jacques</h1>
+    <p class="text-5xl mt-4 max-w-4xl block">I do <span class="underline decoration-emerald-700 decoration-4">Revenue Operations</span>, helping Marketing, Sales and Customer Success teams with data, process and technology.</p>
+
+    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest writing</h2>
+    <ul class="mb-4">
+    {%- for writing in collections.writing | reverse -%}
+      {% if loop.index0 < 5 %}
+      <li><small><time class="mr-8 text-gray-500" datetime="{{ writing.date | htmlDateString }}">{{ writing.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ writing.url }}">{{ writing.data.title }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+    </ul>
+    <a href="/writing/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">Read all writing &#10230;</a>
+
+    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest reading</h2>
+    <ul class="mb-4">
+    {%- for reading in collections.reading | reverse -%}
+      {% if loop.index0 < 5 %}
+      <li><small><time class="mr-8 text-gray-500" datetime="{{ reading.date | htmlDateString }}">{{ reading.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ reading.url }}">{{ reading.data.title }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+    </ul>
+    <a href="/reading/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">See all books &#10230;</a>
+
+    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest links</h2>
+    <ul class="mb-4">
+    {%- for links in collections.links | reverse -%}
+      {% if loop.index0 < 5 %}
+      <li><small><time class="mr-8 text-gray-500" datetime="{{ links.date | htmlDateString }}">{{ links.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ links.url }}">{{ links.data.title }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+    </ul>
+    <a href="/links/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">See all links &#10230;</a>
   </div>
 
 
-  <a href="https://github.com/tomreinert/minimal-11ty-tailwind-starter" class="inline-block uppercase rounded bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-sm">Download on github</a>
-</div>
+
+{% endblock %}
