@@ -3,44 +3,66 @@ eleventyExcludeFromCollections: true
 ---
 {% extends "default.njk" %}
 
-{% block title %}Jacques Corby-Tuech{% endblock %}
+{% block title %}Fork Fandom{% endblock %}
 
 {% block content %}
   <div class="max-w-7xl mx-auto w-full">
-    <h1 class="text-5xl font-bold mt-12">Hi, I'm Jacques</h1>
-    <p class="text-5xl mt-4 max-w-4xl block">I do <span class="underline decoration-emerald-700 decoration-4">Revenue Operations</span>, helping Marketing, Sales and Customer Success teams with data, process and technology.</p>
 
-    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest writing</h2>
-    <ul class="mb-4">
-    {%- for writing in collections.writing | reverse -%}
-      {% if loop.index0 < 5 %}
-      <li><small><time class="mr-8 text-gray-500" datetime="{{ writing.date | htmlDateString }}">{{ writing.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ writing.url }}">{{ writing.data.title }}</a></li>
-      {%- endif -%}
-    {%- endfor -%}
-    </ul>
-    <a href="/writing/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">Read all writing &#10230;</a>
+    <p class="text-5xl mt-12 max-w-4xl block">So you want to know how to fork your Fandom wiki?</p>
 
-    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest reading</h2>
-    <ul class="mb-4">
-    {%- for reading in collections.reading | reverse -%}
-      {% if loop.index0 < 5 %}
-      <li><small><time class="mr-8 text-gray-500" datetime="{{ reading.date | htmlDateString }}">{{ reading.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ reading.url }}">{{ reading.data.title }}</a></li>
-      {%- endif -%}
-    {%- endfor -%}
-    </ul>
-    <a href="/reading/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">See all books &#10230;</a>
+    <h2 class="mt-12 text-3xl font-semibold">What is forking?</h2>
+    <p class="mt-6 text-xl">In the context of wikis, forking is the act of taking a copy of an existing wiki site and moving it elsewhere so that you can work on it independently from the original host.</p>
 
-    <h2 class="mt-16 mb-4 text-3xl font-bold">Latest links</h2>
-    <ul class="mb-4">
-    {%- for links in collections.links | reverse -%}
-      {% if loop.index0 < 5 %}
-      <li><small><time class="mr-8 text-gray-500" datetime="{{ links.date | htmlDateString }}">{{ links.date | htmlDateString }}</time></small> <a class="text-xl" href ="{{ links.url }}">{{ links.data.title }}</a></li>
-      {%- endif -%}
-    {%- endfor -%}
-    </ul>
-    <a href="/links/" class="text-xl underline decoration-sky-600 hover:decoration-4 visited:decoration-purple-500">See all links &#10230;</a>
-  </div>
+    <p class="mt-6 text-xl">This results in two separate wiki sites with a common origin of content.</p>
 
+    <h2 class="mt-12 text-3xl font-semibold">What's wrong with Fandom?</h2>
+
+    <p class="mt-6 text-xl">Fandom is a business that exists to monetise user generated content. It does this through <a class="underline decoration-fandom-pink decoration-4" href="https://kotaku.com/fallout-fans-resist-wikias-attempt-to-pivot-to-video-1804145954">aggressive</a> <a class="underline decoration-fandom-pink decoration-4" href="https://pagexray.fouanalytics.com/q/pathofexile.fandom.com?f=">advertising</a> placed on its community managed wikis, with those communities having little to no input or say into how their work is monetised or how they're able to visually present content on those sites.</p>
+
+    <p class="mt-6 text-xl">This results in a homogenous site, <a class="underline decoration-fandom-pink decoration-4" href="https://community.fandom.com/wiki/User_blog:MisterWoodhouse/Retirement_of_legacy_designs">full of lookalike wikis</a>. <i>Good for Fandom, bad for community sites who have long been used to creating visually distinct brands for themselves</i></p>
+
+ 
+
+    <h2 class="mt-12 text-3xl font-semibold">Who has successfully forked?</h2>
+
+    <p class="mt-6 text-xl">Numerous community wikis have already successfully forked from Fandom, including <a class="underline decoration-fandom-pink decoration-4" href="https://kotaku.com/video-game-wikis-abandon-their-platform-after-year-of-p-1829401866">Runescape</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.pcgamesn.com/terraria/wiki">Terraria</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.gamesindustry.biz/zelda-wiki-splits-from-fandom-in-move-to-regain-independence">Zelda</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.reddit.com/r/yugioh/comments/7ngcgq/possible_new_yugioh_wiki_ran_by_ygorganization/">Yu-Gi-Oh</a> and <a class="underline decoration-fandom-pink decoration-4" href="https://www.pathofexile.com/forum/view-thread/3292958">Path of Exile</a> </p>
+
+    <h2 class="mt-12 text-3xl font-semibold">What do you need for a successful fork?</h2>
+
+    <p class="mt-6 text-xl">A successful fork starts with the following</p>
+    <ol class="mt-6 text-xl list-decimal list-inside">
+      <li>Buy in from the wiki admins, moderators and editors</li>
+      <li>Buy in from the wider community that the wiki serves</li>
+      <li>Someone with experience running a php stack server</li>
+      <li>Someone with experience of <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> software</li>
+    </ol>
+
+    <p class="mt-6 text-xl font-semibold">But what does that actually mean?</p>
+
+    <p class="mt-6 text-xl">Without support from the existing admins, moderators and editors, you'll be left trying to wrangle an unfamiliar site (ask me about <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>). Even worse, if those community members don't move to the new site, you'll have active edits being made on the site you hoped to make defunct. It is absolutely crucial that you're able to reach a critical mass and bring all those folks over to the new site.</p>
+
+    <p class="mt-6 text-xl">Wikis don't exist in a vacuum and they usually serve a wider community. When we successfully forked the Path of Exile wiki we had a tremendous amount of support from the wider community. This translated into large community sites like Reddit and poe.ninja and apps like Path of Building changing backlinks from Fandom to our new domain, allowing us to build hundreds of thousands of links in quick order from highly reputable and relevant sources. The wider community engagement also meant that while we had our work cut out to beat Fandom on the SERP (Search Engine Results Page), community members went out of their way to ensure they clicked on our links instead of Fandoms.</p>
+
+    <p class="mt-6 text-xl">There's no escaping it, but you'll almost certainly need some kind of technical chops to spin up the new wiki. While MediaWiki itself is <a class="underline decoration-fandom-pink decoration-4" href ="https://www.mediawiki.org/wiki/Manual:Contents">well documented</a>, it's hard to beat an experienced php sysadmin. This is all the more important if the wiki you're looking to fork has a high amount of traffic and you'll have to seriously think about caching, CDN's and MediaWiki quirks like the <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Job_queue">Job queue</a>. While some new wiki farms have emerged in recent years that can help with this, it may be short sighted and might put you back in the same boat a few years down the line.</p>
+
+    <p class="mt-6 text-xl"><i>If you don't have at least these 4 things in place, I would seriously consider not forking at this moment in time</i></p>
+
+    <h2 class="mt-12 text-3xl">How do you go about forking?</h2>
+
+    <p class="mt-6 text-xl">Any serious forking attempt should be done relatively quietly at first with a few trusted members to get things moving. While Fandom do have a <a class="underline decoration-fandom-pink decoration-4" href="https://community.fandom.com/wiki/Forking_Policy">Forking Policy</a>, it is incredible restrictive and Fandom have been known to retaliate against wiki members in the past.</p>
+
+    <p class="mt-6 text-xl">A domain name should be acquired and technical work should be started to prepare the wiki. You should look at <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Performance_tuning">performance tuning</a> and ensuring all necessary extensions are installed and operational.</p>
+
+    <p class="mt-6 text-xl">Once your wiki is running and your extensions are configured, it's time to import your content. This can be done through <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Grabbers">Grabbers</a> or by tools created by <a class="underline decoration-fandom-pink decoration-4" href="https://github.com/WikiTeam/wikiteam">WikiTeam</a> both of which allow you to automatically export all content, revisions and images from a Fandom wiki. In the case of the WikiTeam tools you'll also need to run <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">MediaWiki scripts</a> to import the content into your database.</p>
+
+    <p class="mt-6 text-xl">With that done, it's time to reach out to your community and start drumming up as much publicity as you can. It's not a bad idea at this point to reach out to influential community members such as streamers and YouTubers who are always on the lookout for easy content.</p>
+
+    <p class="mt-6 text-xl">Well done, now the hard work begins.</p>
+
+
+<h2 class="mt-12 text-3xl">How do I beat Fandom's SEO</h2>
+
+    <p class="mt-6 text-xl">...</p>
 
 
 {% endblock %}

@@ -3,6 +3,9 @@ module.exports = {
     safelist: [],
     theme: {
       extend: {
+        colors: {
+          'fandom-pink': '#fa005a',
+        }
       },
     },
     plugins: [],

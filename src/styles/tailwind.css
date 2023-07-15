@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+   
 
     /* Markdown content styling */
 
