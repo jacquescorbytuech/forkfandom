@@ -6,63 +6,101 @@ eleventyExcludeFromCollections: true
 {% block title %}Fork Fandom{% endblock %}
 
 {% block content %}
-  <div class="max-w-7xl mx-auto w-full">
+  <div class="max-w-7xl mx-auto w-full fork-fandom">
 
-    <p class="text-5xl mt-12 max-w-4xl block">So you want to know how to fork your Fandom wiki?</p>
+    <p class="subhead">So you want to know how to fork your Fandom wiki?</p>
 
-    <h2 class="mt-12 text-3xl font-semibold">What is forking?</h2>
-    <p class="mt-6 text-xl">In the context of wikis, forking is the act of taking a copy of an existing wiki site and moving it elsewhere so that you can work on it independently from the original host.</p>
+    <h2>What is forking?</h2>
+    <p>In the context of wikis, forking is the act of taking a copy of an existing wiki site and moving it elsewhere so that you can work on it independently from the original host.</p>
 
-    <p class="mt-6 text-xl">This results in two separate wiki sites with a common origin of content.</p>
+    <p>This results in two separate wiki sites with a common origin of content.</p>
 
-    <h2 class="mt-12 text-3xl font-semibold">What's wrong with Fandom?</h2>
+    <h2>What's wrong with Fandom?</h2>
 
-    <p class="mt-6 text-xl">Fandom is a business that exists to monetise user generated content. It does this through <a class="underline decoration-fandom-pink decoration-4" href="https://kotaku.com/fallout-fans-resist-wikias-attempt-to-pivot-to-video-1804145954">aggressive</a> <a class="underline decoration-fandom-pink decoration-4" href="https://pagexray.fouanalytics.com/q/pathofexile.fandom.com?f=">advertising</a> placed on its community managed wikis, with those communities having little to no input or say into how their work is monetised or how they're able to visually present content on those sites.</p>
+    <p>Fandom is a business that exists to monetise user generated content. It does this through <a href="https://kotaku.com/fallout-fans-resist-wikias-attempt-to-pivot-to-video-1804145954">aggressive</a> <a href="https://pagexray.fouanalytics.com/q/pathofexile.fandom.com?f=">advertising</a> placed on its community managed wikis, with those communities having little to no input or say into how their work is monetised or how they're able to visually present content on those sites.</p>
 
-    <p class="mt-6 text-xl">This results in a homogenous site, <a class="underline decoration-fandom-pink decoration-4" href="https://community.fandom.com/wiki/User_blog:MisterWoodhouse/Retirement_of_legacy_designs">full of lookalike wikis</a>. <i>Good for Fandom, bad for community sites who have long been used to creating visually distinct brands for themselves</i></p>
+    <p>This results in a homogenous site, <a href="https://community.fandom.com/wiki/User_blog:MisterWoodhouse/Retirement_of_legacy_designs">full of lookalike wikis</a>. <i>Good for Fandom, bad for community sites who have long been used to creating visually distinct brands for themselves</i></p>
 
- 
+    <h2>Who has successfully forked?</h2>
 
-    <h2 class="mt-12 text-3xl font-semibold">Who has successfully forked?</h2>
+    <p>Numerous community wikis have already successfully forked from Fandom, including <a href="https://kotaku.com/video-game-wikis-abandon-their-platform-after-year-of-p-1829401866">Runescape</a>, <a href="https://www.pcgamesn.com/terraria/wiki">Terraria</a>, <a href="https://www.gamesindustry.biz/zelda-wiki-splits-from-fandom-in-move-to-regain-independence">Zelda</a>, <a href="https://www.reddit.com/r/yugioh/comments/7ngcgq/possible_new_yugioh_wiki_ran_by_ygorganization/">Yu-Gi-Oh</a> and <a href="https://www.pathofexile.com/forum/view-thread/3292958">Path of Exile</a>.</p>
 
-    <p class="mt-6 text-xl">Numerous community wikis have already successfully forked from Fandom, including <a class="underline decoration-fandom-pink decoration-4" href="https://kotaku.com/video-game-wikis-abandon-their-platform-after-year-of-p-1829401866">Runescape</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.pcgamesn.com/terraria/wiki">Terraria</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.gamesindustry.biz/zelda-wiki-splits-from-fandom-in-move-to-regain-independence">Zelda</a>, <a class="underline decoration-fandom-pink decoration-4" href="https://www.reddit.com/r/yugioh/comments/7ngcgq/possible_new_yugioh_wiki_ran_by_ygorganization/">Yu-Gi-Oh</a> and <a class="underline decoration-fandom-pink decoration-4" href="https://www.pathofexile.com/forum/view-thread/3292958">Path of Exile</a> </p>
+    <h2>What do you need for a successful fork?</h2>
 
-    <h2 class="mt-12 text-3xl font-semibold">What do you need for a successful fork?</h2>
-
-    <p class="mt-6 text-xl">A successful fork starts with the following</p>
+    <p>A successful fork starts with the following</p>
     <ol class="mt-6 text-xl list-decimal list-inside">
       <li>Buy in from the wiki admins, moderators and editors</li>
       <li>Buy in from the wider community that the wiki serves</li>
       <li>Someone with experience running a php stack server</li>
-      <li>Someone with experience of <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> software</li>
+      <li>Someone with experience of <a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> software</li>
     </ol>
 
-    <p class="mt-6 text-xl font-semibold">But what does that actually mean?</p>
+    <p><b>But what does that actually mean?</b></p>
 
-    <p class="mt-6 text-xl">Without support from the existing admins, moderators and editors, you'll be left trying to wrangle an unfamiliar site (ask me about <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>). Even worse, if those community members don't move to the new site, you'll have active edits being made on the site you hoped to make defunct. It is absolutely crucial that you're able to reach a critical mass and bring all those folks over to the new site.</p>
+    <p>Without support from the existing admins, moderators and editors, you'll be left trying to wrangle an unfamiliar site (ask me about <a href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>). Even worse, if those community members don't move to the new site, you'll have active edits being made on the site you hoped to make defunct. It is absolutely crucial that you're able to reach a critical mass and bring all those folks over to the new site.</p>
 
-    <p class="mt-6 text-xl">Wikis don't exist in a vacuum and they usually serve a wider community. When we successfully forked the Path of Exile wiki we had a tremendous amount of support from the wider community. This translated into large community sites like Reddit and poe.ninja and apps like Path of Building changing backlinks from Fandom to our new domain, allowing us to build hundreds of thousands of links in quick order from highly reputable and relevant sources. The wider community engagement also meant that while we had our work cut out to beat Fandom on the SERP (Search Engine Results Page), community members went out of their way to ensure they clicked on our links instead of Fandoms.</p>
+    <p>Wikis don't exist in a vacuum and they usually serve a wider community. The wider community engagement also meant that while we had our work cut out to beat Fandom on the SERP (Search Engine Results Page), community members went out of their way to ensure they clicked on our links instead of Fandoms.</p>
 
-    <p class="mt-6 text-xl">There's no escaping it, but you'll almost certainly need some kind of technical chops to spin up the new wiki. While MediaWiki itself is <a class="underline decoration-fandom-pink decoration-4" href ="https://www.mediawiki.org/wiki/Manual:Contents">well documented</a>, it's hard to beat an experienced php sysadmin. This is all the more important if the wiki you're looking to fork has a high amount of traffic and you'll have to seriously think about caching, CDN's and MediaWiki quirks like the <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Job_queue">Job queue</a>. While some new wiki farms have emerged in recent years that can help with this, it may be short sighted and might put you back in the same boat a few years down the line.</p>
+    <p>There's no escaping it, but you'll almost certainly need some kind of technical chops to spin up the new wiki. While MediaWiki itself is <a href ="https://www.mediawiki.org/wiki/Manual:Contents">well documented</a>, it's hard to beat an experienced php sysadmin. This is all the more important if the wiki you're looking to fork has a high amount of traffic and you'll have to seriously think about caching, CDN's and MediaWiki quirks like the <a href="https://www.mediawiki.org/wiki/Manual:Job_queue">Job queue</a>. While some new wiki farms have emerged in recent years that can help with this, it may be short sighted and might put you back in the same boat a few years down the line.</p>
 
-    <p class="mt-6 text-xl"><i>If you don't have at least these 4 things in place, I would seriously consider not forking at this moment in time</i></p>
+    <p><i>If you don't have at least these 4 things in place, I would seriously consider not forking at this moment in time</i></p>
 
     <h2 class="mt-12 text-3xl">How do you go about forking?</h2>
 
-    <p class="mt-6 text-xl">Any serious forking attempt should be done relatively quietly at first with a few trusted members to get things moving. While Fandom do have a <a class="underline decoration-fandom-pink decoration-4" href="https://community.fandom.com/wiki/Forking_Policy">Forking Policy</a>, it is incredible restrictive and Fandom have been known to retaliate against wiki members in the past.</p>
+    <p>Any serious forking attempt should be done relatively quietly at first with a few trusted members to get things moving. While Fandom do have a <a href="https://community.fandom.com/wiki/Forking_Policy">Forking Policy</a>, it is incredible restrictive and Fandom have been known to retaliate against wiki members in the past.</p>
 
-    <p class="mt-6 text-xl">A domain name should be acquired and technical work should be started to prepare the wiki. You should look at <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Performance_tuning">performance tuning</a> and ensuring all necessary extensions are installed and operational.</p>
+    <p>A domain name should be acquired and technical work should be started to prepare the wiki. You should look at <a href="https://www.mediawiki.org/wiki/Manual:Performance_tuning">performance tuning</a> and ensuring all necessary extensions are installed and operational.</p>
 
-    <p class="mt-6 text-xl">Once your wiki is running and your extensions are configured, it's time to import your content. This can be done through <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Grabbers">Grabbers</a> or by tools created by <a class="underline decoration-fandom-pink decoration-4" href="https://github.com/WikiTeam/wikiteam">WikiTeam</a> both of which allow you to automatically export all content, revisions and images from a Fandom wiki. In the case of the WikiTeam tools you'll also need to run <a class="underline decoration-fandom-pink decoration-4" href="https://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">MediaWiki scripts</a> to import the content into your database.</p>
+    <p>Once your wiki is running and your extensions are configured, it's time to import your content. This can be done through <a href="https://www.mediawiki.org/wiki/Manual:Grabbers">Grabbers</a> or by tools created by <a href="https://github.com/WikiTeam/wikiteam">WikiTeam</a> both of which allow you to automatically export all content, revisions and images from a Fandom wiki. In the case of the WikiTeam tools you'll also need to run <a href="https://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">MediaWiki scripts</a> to import the content into your database.</p>
 
-    <p class="mt-6 text-xl">With that done, it's time to reach out to your community and start drumming up as much publicity as you can. It's not a bad idea at this point to reach out to influential community members such as streamers and YouTubers who are always on the lookout for easy content.</p>
+    <p>With that done, it's time to reach out to your community and start drumming up as much publicity as you can. It's not a bad idea at this point to reach out to influential community members such as streamers and YouTubers who are always on the lookout for easy content.</p>
 
-    <p class="mt-6 text-xl">Well done, now the hard work begins.</p>
-
-
-<h2 class="mt-12 text-3xl">How do I beat Fandom's SEO</h2>
-
-    <p class="mt-6 text-xl">...</p>
+    <p>Well done, now the hard work begins.</p>
 
 
+    <h2>How can I beat Fandom's SEO?</h2>
+
+    <p>Fandom have placed significant energy and resources into optimising their website for the web. Unfortunately for them, they've placed more energy and resources into filling their websites full of advertising, <i>time to use that to your advantage</i>.</p>
+
+    <p>Generally, there are 3 key areas to focus on when thinking about the SEO of a wiki (or any other site, for that matter). Those are:
+
+      <ol class="mt-6 text-xl list-decimal list-inside">
+        <li>Content</li>
+        <li>Page optimisation</li>
+        <li>Authority</li>
+      </ol>
+
+      <h3>Content</h3>
+
+      <p>Wikis generally have excellent well sourced and comprehensive content. <b>That's great</b>, better than most sites, in fact. The challenges we have specifically when thinking about a forked wiki is that Google will penalise sites that they think have duplicate content. This means that if you want to rank, you have to ensure your webpage is different enough from the Fandom wiki you've forked.</p>
+
+      <p>Guess what? All the shit Fandom have crammed the page with actually works in your favour here. Remove the sidebar, the ginormous footer and the Fan Feed and suddenly, your page is already starting to look quite different as far as a search engine is concerned. A good wiki will typically make frequent use of <a href="https://www.mediawiki.org/wiki/Help:Templates">Templates</a> to help with standardising layout and repeatable content, sufficient changes to templates can easily help you change the content on thousands of pages in one fell swoop.</p>
+
+      <p>A key factor in your content optimisation is also <a href="https://moz.com/blog/freshness-and-seo">how recently your content was last edited</a>, <b>this is why it's absolutely critical to bring the editor community over onto your new site</b>.</p>
+
+      <p>One of the best things you can do is to sign up to <a href="https://search.google.com/search-console/about">Google Search Console</a> and <a href="https://www.bing.com/webmaster/tools">Microsoft Webmaster Tools</a>. These give you critical insights into how your site is performing on the SERP, including how often keywords are being seen, in what position and how many clicks they're getting. They also allow you to submit sitemaps which you can <a href="https://www.mediawiki.org/wiki/Manual:GenerateSitemap.php">easily generate</a> in MediaWiki.
+
+      <h3>Page Optimisation</h3>
+
+      <p>The second factor to look at is page optimisation. What I'm speaking about here specifically is how performant is your site.</p>
+
+      <p>Thankfully, modern MediaWiki skins are very performant and being free from hundreds of trackers will do wonders for your page speed. A capable server and decent <a href="https://www.mediawiki.org/wiki/Manual:Performance_tuning">performance tuning</a> will generally result in a great <a href="https://developer.chrome.com/en/docs/lighthouse/performance/performance-scoring/">lighthouse score</a>.</p>
+
+      <h3>Authority</h3>
+
+      <p>Less important now than it used to be, but <a href="https://ahrefs.com/blog/google-pagerank">PageRank</a> is still an important factor in earning a good position on the SERP.</p>
+
+      <p>Remember when we talked about reaching out to your community? This is where that pays off as effective outreach should allow you to generate hundreds if not thousands of backlinks from key websites related to your wiki. When we announced the fork for the Path of Exile wiki we had a tremendous amount of support from the wider community. This translated into large community sites like Reddit and poe.ninja and apps like Path of Building changing backlinks from Fandom to our new domain, allowing us to build hundreds of thousands of links in quick order from highly reputable and relevant sources.</p>
+
+      <p><i>Don't be afraid to reach out and ask for links</i>. You'll be surprised at how much support you'll get for leaving Fandom.</p> 
+
+      <h2>Final Thoughts</h2>
+
+      <p>Fandom and it's ilk are an absolute plague to the modern web. Their parasitic business model relies on aggressively monetising user generated content without providing any value back to those individuals for their labour. They have <a href="https://www.youtube.com/watch?v=vYo9G_gkjGM">no respect</a> for the communities that provide them both with the content and the pageviews they monetise and continue to shamelessly gaslight community members and former staff.</p>
+
+      <p>Communities deserve better.</p>
+
+      <p><i>It's time to Fork Fandom</i>.</p>
+
+</div>
 {% endblock %}

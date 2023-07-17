@@ -4,70 +4,34 @@
 
 @layer base {
    
-
-    /* Markdown content styling */
-
-    .content p {
-        @apply text-xl my-8 leading-normal
+    .fork-fandom p {
+        @apply mt-6 text-xl;
     }
 
-    .content h2 {
-        @apply text-3xl mt-16 mb-4 font-bold
+    .fork-fandom h2 {
+        @apply mt-12 text-3xl font-semibold;
     }
 
-    .content h3 {
-        @apply text-2xl mt-16 mb-4 font-bold
+    .fork-fandom h3 {
+        @apply mt-12 text-2xl font-semibold;
     }
 
-    .content hr {
-        @apply max-w-2xl mt-16 mb-16 ml-auto mr-auto
+    .fork-fandom a {
+        @apply underline decoration-fandom-pink decoration-4;
     }
 
-    .content b, strong {
-        @apply font-bold
+    p.subhead {
+        @apply text-5xl mt-12 max-w-4xl block;
     }
 
-    .content a {
-        @apply underline decoration-sky-600 hover:decoration-4 break-words
+    footer a {
+        @apply underline decoration-blue-400 decoration-2;
     }
 
-    .content a:visited {
-        @apply decoration-purple-500
+    b {
+        @apply font-semibold
     }
 
-    .content blockquote {
-        @apply bg-gray-100 border-l-8 p-6 mt-8
-    }
-
-    .content blockquote p {
-        @apply first:mt-0 last:mb-0 drop-shadow-[1px_1px_rgba(255,255,255,1)]
-    }
-
-    .content img {
-        @apply max-w-3xl my-20 mx-auto w-full
-    }
-
-    .content code {
-        @apply bg-gray-100 text-lg px-1
-    }
-
-
-
-    .content ol {
-        @apply list-decimal text-xl ml-8 leading-8
-    }
-
-    .content ul {
-        @apply list-disc text-xl ml-12 leading-8
-    }
-
-    .category ol {
-        @apply list-none ml-0
-    }
-
-    .footnotes p {
-        @apply my-2
-    }
 }
 
 @layer utilities {
